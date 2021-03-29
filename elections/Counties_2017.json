@@ -1,0 +1,408 @@
+{
+    "E10000002": {
+        "name": "Buckinghamshire",
+        "id": "E10000002",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 41,
+            "Labour": 1,
+            "Liberal Democrats": 4,
+            "local": 1,
+            "Independent": 2
+        }
+    },
+    "E10000003": {
+        "name": "Cambridgeshire",
+        "id": "E10000003",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 34,
+            "Liberal Democrats": 16,
+            "Labour": 6,
+            "local": 2,
+            "Independent": 1
+        }
+    },
+    "E10000006": {
+        "name": "Cumbria",
+        "id": "E10000004",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "NOC",
+        "control": "Labour-Liberal Democrats Coalition",
+        "parties": {
+            "Conservatives": 37,
+            "Liberal Democrats": 16,
+            "Labour": 26,
+            "Independent": 5
+        }
+    },
+    "E10000007": {
+        "name": "Derbyshire",
+        "id": "E10000007",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 37,
+            "Liberal Democrats": 3,
+            "Labour": 24
+        }
+    },
+    "E10000008": {
+        "name": "Devon",
+        "id": "E10000008",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 42,
+            "Liberal Democrats": 6,
+            "Labour": 7,
+            "Green": 1,
+            "local": 1,
+            "Independent": 3
+        }
+    },
+    "E10000011": {
+        "name": "East Sussex",
+        "id": "E10000011",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 30,
+            "Labour": 4,
+            "Liberal Democrats": 11,
+            "Independent": 5
+        }
+    },
+    "E10000012": {
+        "name": "Essex",
+        "id": "E10000012",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 52,
+            "Liberal Democrats": 8,
+            "Labour": 6,
+            "Green": 1,
+            "local": 4,
+            "Independent": 1
+        }
+    },
+    "E10000013": {
+        "name": "Gloucestershire",
+        "id": "E10000013",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 31,
+            "Liberal Democrats": 15,
+            "Labour": 4,
+            "Green": 2,
+            "local": 1
+        }
+    },
+    "E10000014": {
+        "name": "Hampshire",
+        "id": "E10000014",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 56,
+            "Liberal Democrats": 19,
+            "Labour": 2,
+            "local": 1
+        }
+    },
+    "E10000015": {
+        "name": "Hertfordshire",
+        "id": "E10000015",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 49,
+            "Liberal Democrats": 18,
+            "Labour": 9,
+            "Independent": 2
+        }
+    },
+    "E10000016": {
+        "name": "Kent",
+        "id": "E10000016",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 67,
+            "Liberal Democrats": 7,
+            "Labour": 5,
+            "Green": 1,
+            "Independent": 1
+        }
+    },
+    "E10000017": {
+        "name": "Lancashire",
+        "id": "E10000017",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 45,
+            "Liberal Democrats": 4,
+            "Labour": 30,
+            "Green": 1,
+            "UKIP": 1,
+            "Independent": 3
+        }
+    },
+    "E10000018": {
+        "name": "Leicestershire",
+        "id": "E10000018",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 36,
+            "Liberal Democrats": 13,
+            "Labour": 6
+        }
+    },
+    "E10000019": {
+        "name": "Lincolnshire",
+        "id": "E10000019",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 57,
+            "Liberal Democrats": 1,
+            "Labour": 6,
+            "local": 1,
+            "Independent": 5
+        }
+    },
+    "E10000020": {
+        "name": "Norfolk",
+        "id": "E10000020",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 55,
+            "Liberal Democrats": 11,
+            "Labour": 16,
+            "Independent": 2
+        }
+    },
+    "E10000021": {
+        "name": "Northamptonshire",
+        "id": "E10000021",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 42,
+            "Liberal Democrats": 2,
+            "Labour": 11,
+            "Independent": 2
+        }
+    },
+    "E10000023": {
+        "name": "North Yorkshire",
+        "id": "E10000023",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 54,
+            "Liberal Democrats": 4,
+            "Labour": 4,
+            "local": 8,
+            "Independent": 2
+        }
+    },
+    "E10000024": {
+        "name": "Nottinghamshire",
+        "id": "E10000024",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "NOC",
+        "control": "Conservative-Independent Coalition",
+        "parties": {
+            "Conservatives": 31,
+            "Liberal Democrats": 1,
+            "Labour": 23,
+            "local": 8,
+            "Independent": 3
+        }
+    },
+    "E10000025": {
+        "name": "Oxfordshire",
+        "id": "E10000024",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "NOC",
+        "control": "Conservative-Independent Coalition",
+        "parties": {
+            "Conservatives": 30,
+            "Liberal Democrats": 14,
+            "Labour": 13,
+            "Independent": 6
+        }
+    },
+    "E10000027": {
+        "name": "Somerset",
+        "id": "E10000027",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 35,
+            "Liberal Democrats": 12,
+            "Labour": 3,
+            "Green": 2,
+            "Independent": 3
+        }
+    },
+    "E10000028": {
+        "name": "Staffordshire",
+        "id": "E10000028",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 51,
+            "Labour": 10,
+            "Independent": 1
+        }
+    },
+    "E10000029": {
+        "name": "Suffolk",
+        "id": "E10000029",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 52,
+            "Labour": 11,
+            "Liberal Democrats": 5,
+            "Green": 3,
+            "Independent": 4
+        }
+    },
+    "E10000030": {
+        "name": "Surrey",
+        "id": "E10000030",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 61,
+            "Labour": 1,
+            "Liberal Democrats": 9,
+            "Green": 1,
+            "local": 4,
+            "Independent": 5
+        }
+    },
+    "E10000031": {
+        "name": "Warwickshire",
+        "id": "E10000031",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 36,
+            "Labour": 10,
+            "Liberal Democrats": 7,
+            "Green": 2,
+            "local": 1,
+            "Independent": 1
+        }
+    },
+    "E10000032" : {
+        "name": "West Sussex",
+        "id": "E10000032",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 56,
+            "Labour": 5,
+            "Liberal Democrats": 9
+        }
+    },
+    "E10000034" : {
+        "name": "Worcestershire",
+        "id": "E10000034",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "control": "CON",
+        "parties": {
+            "Conservatives": 40,
+            "Labour": 10,
+            "Liberal Democrats": 3,
+            "Green": 2,
+            "Independent": 2
+        }
+    }
+}
