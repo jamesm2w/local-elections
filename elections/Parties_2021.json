@@ -1,0 +1,52 @@
+{
+    "CON": {
+        "name": "Conservative",
+        "code": "CON",
+        "colour": "#0087DC"
+    },
+    "LAB": {
+        "name": "Labour",
+        "code": "LAB",
+        "colour": "#E4003B"
+    },
+    "LIB": {
+        "name": "Liberal Democrats",
+        "code": "LIB",
+        "colour": "#FAA61A"
+    },
+    "UKIP": {
+        "name": "UKIP",
+        "code": "UKIP",
+        "colour": "#70147A"
+    },
+    "GRN": {
+        "name": "Green",
+        "code": "GRN",
+        "colour": "#6AB023"
+    },
+    "PC": {
+        "name": "Plaid Cymru",
+        "code": "PC",
+        "colour": "#008142"
+    },
+    "BXP": {
+        "name": "Brexit Party",
+        "code": "BXP",
+        "colour": "#12B6CF"
+    },
+    "IND": {
+        "name": "Independent",
+        "code": "IND",
+        "colour": "#DDDDDD"
+    },
+    "OTH": {
+        "name": "Others",
+        "code": "OTH",
+        "colour": "#BB00BB"
+    },
+    "NOC": {
+        "name": "No Overall Control",
+        "code": "NOC",
+        "colour": "black"
+    }
+}

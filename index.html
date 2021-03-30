@@ -18,6 +18,16 @@
                 width: 100vw;
                 height: 100vh;
             }
+
+            .big-text {
+                font-weight: 700;
+                font-size: 1.3rem;
+            }
+
+            .small-text {
+                font-weight: 300;
+                font-size: 0.7rem;
+            }
         </style>
     </head>
     <body>
@@ -54,52 +64,46 @@
                 });
             }
 
-            async function svgToPng (data) {
-                return new Promise((accept, reject) => {
-                    let img = document.createElement("img");
-                    document.body.appendChild(img);
-                    img.onload = () => {
-                        let canvas = document.createElement("canvas");
-                        canvas.width = img.clientWidth;
-                        canvas.height = img.clientHeight;
+            async function getPartyData (partyCode) {
+                if (!window.parties) {
+                    return {};
+                }
 
-                        let ctx = canvas.getContext("2d");
-                        ctx.drawImage(img, 0, 0);
-                        let imageData = canvas.toDataURL("image/png");
-                        accept(imageData);
-                        document.body.removeChild(img);
-                    };
-                    img.src = URL.createObjectURL(new Blob([data], {type: "image/svg+xml"}));
-                });
+                return window.parties[partyCode];
             }
 
-            async function createArchPicture (parties) {
-                let partyGroups = [];
-                if (parties["Conservatives"] != undefined) {
-                    partyGroups.push({"name":"Conservatives", "colour": "#0087DC", "seats": parties["Conservatives"]});
-                }
-                if (parties["Liberal Democrats"] != undefined) {
-                    partyGroups.push({"name":"Liberal Democrats", "colour": "#FAA61A", "seats": parties["Liberal Democrats"]});
-                }
-                if (parties["Labour"] != undefined) {
-                    partyGroups.push({"name":"Labour", "colour": "#d50000", "seats": parties["Labour"]});
-                }
-                if (parties["Green"] != undefined) {
-                    partyGroups.push({"name":"Green", "colour": "#6AB023", "seats": parties["Green"]});
-                }
-                if (parties["UKIP"] != undefined) {
-                    partyGroups.push({"name":"UKIP", "colour": "#70147A", "seats": parties["UKIP"]});
-                }
-                if (parties["local"] != undefined) {
-                    partyGroups.push({"name":"Localist", "colour": "#bb00bb", "seats": parties["local"]});
-                }
-                if (parties["Independent"] != undefined) {
-                    partyGroups.push({"name":"Independent", "colour": "#DDDDDD", "seats": parties["Independent"]});
+            async function createCouncilDiagram (groupings) {
+                if (groupings == undefined) {
+                    return undefined;
                 }
 
-                let svg = createArch(partyGroups);
-                console.log(svg);
-                return URL.createObjectURL(new Blob([svg], {type: "image/svg+xml"}))
+                let partyGroups = [];
+                let name = "Control: ";
+                if (groupings["Administration"]) {
+                    let count = 0;
+                    for (let party of groupings["Administration"]) {
+                        let partyData = await getPartyData(party.name);
+
+                        partyGroups.push({"name": partyData.name, "colour": partyData.colour, "seats": party.seats});
+
+                        name += (count >= 1 ? "-" : "") + partyData.name;
+                        count++;
+                    }
+                }
+
+                if (groupings["Opposition"]) {
+                    for (let party of groupings["Opposition"]) {
+                        let partyData = await getPartyData(party.name);
+                        partyGroups.push({"name": partyData.name, "colour": partyData.colour, "seats": party.seats});
+                    }
+                }
+
+                let svg = createArch(partyGroups, name);
+                return URL.createObjectURL(new Blob([svg], {type: "image/svg+xml"}));
+            }
+
+            async function createElectionResults (candidates) {
+                // candidates: {name: "Bob", party: "LD", result: 0.45, incumbent: false, elected: true}
             }
         </script>
         <script>
@@ -114,6 +118,10 @@
             // Dec 2020:
             // Local Authority Districts (BUC) 500m: https://opendata.arcgis.com/datasets/69dc11c7386943b4ad8893c45648b1e1_0.geojson
             // Local Authority Districts (BGC)  20m: https://opendata.arcgis.com/datasets/db23041df155451b9a703494854c18c4_0.geojson
+
+            // Dec 2019:
+            // Police Force Areas (BUC) 500m: https://opendata.arcgis.com/datasets/e79b2d65db914d83899b1cf5b09385ad_0.geojson
+            // Police Force Areas (BGC)  20m: https://opendata.arcgis.com/datasets/1fc3e34edece4cd58dabac422c3556c9_0.geojson
 
             let politicalShading = {
                 "CON": {
@@ -134,16 +142,19 @@
                 window.boundaries = {
                     "counties": await load("data/Counties_2019_500.geojson"),
                     "westminster": await load("data/Westminster_2019_500.geojson"),
-                    "local_authority": await load("data/Local_Authority_2020_500.geojson")
+                    "local_authority": await load("data/Local_Authority_2020_500.geojson"),
+                    "police_force": await load("data/Police_Force_2019_500.geojson")
                 };
 
                 window.elections = {
                     "counties": await load("elections/Counties_2017.json")
                 };
 
+                window.parties = await load("elections/Parties_2021.json");
+
                 let mapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 19,
-                    attribution: '&copy; James Macer-Wright, <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, OpenCouncilData.co.uk, ONS Open Geography Portal'
+                    attribution: '&copy; James Macer-Wright, <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, OpenCouncilData, ONS Open Geography Portal'
                 });
 
                 let counties = L.geoJson(boundaries.counties.features, {
@@ -153,8 +164,16 @@
                     },
                     onEachFeature: async (feature, layer) => {
                         let electionData = window.elections.counties[feature.properties.cty19cd];
-                        layer.bindPopup(`[${electionData.id}] ${electionData.name} <br> ${electionData.type} ${electionData.elections}
-                        <br> Controlled by ${electionData.majority}. Administration: ${electionData.control} <br> <img src=${await createArchPicture(electionData.parties)}>`);
+                        
+                        let popupHTML = `<span class="big-text">${electionData.name}</span> <span class="small-text">[${electionData.id}]</span>
+                        <br>
+                        Type: ${electionData.type} - ${electionData.elections} | Leadership: ${electionData.model}
+                        <br>
+                        Control: ${(await getPartyData(electionData.majority)).name}
+                        <br>
+                        <img src="${await createCouncilDiagram(electionData.groups)}" alt="Council Control Diagram">`;
+                        
+                        layer.bindPopup(popupHTML);
                     }
                 });
 
@@ -180,6 +199,17 @@
                     }
                 });
 
+                let police_force = L.geoJson(boundaries.police_force.features, {
+                    style: {
+                        "color": "#f00",
+                        "weight": 5,
+                        "opacity": 0.65
+                    },
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup(feature.properties.PFA19CD + ": " + feature.properties.PFA19NM);
+                    }
+                })
+
                 window.map = L.map("map", {
                     center: [51.505, -0.09],
                     zoom: 7,
@@ -189,7 +219,8 @@
                 let baseMaps = {
                     "Counties": counties,
                     "Local Authority": local_authority,
-                    "Westminster": westminster
+                    "Westminster": westminster,
+                    "Police Force Areas": police_force
                 };
 
                 let overlayMaps = {};
