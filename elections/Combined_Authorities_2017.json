@@ -1,0 +1,22 @@
+{
+    "E47000001": {
+        "name": "Greater Manchester",
+        "id": "E47000001",
+        "mayor": "Andy Burnham",
+        "party": "LAB",
+        "membership": [
+            {"name": "LAB", "seats": 10},
+            {"name": "CON", "seats": 1}
+        ],
+        "mayoralty": [
+            {"name": "Andy Burnham", "party": "LAB", "round1": 359352, "round2": 0},
+            {"name": "Sean Anstee", "party": "CON", "round1": 128752, "round2": 0},
+            {"name": "Jane Brophy", "party": "LIB", "round1": 34334, "round2": 0},
+            {"name": "Will Patterson", "party": "GRN", "round1": 13424, "round2": 0},
+            {"name": "Stephen Morris", "party": "OTH", "round1": 11115, "round2": 0},
+            {"name": "Shneur Odze", "party": "UKIP", "round1": 10583, "round2": 0},
+            {"name": "Mohammad Aslam", "party": "IND", "round1": 5815, "round2": 0},
+            {"name": "Marcus Farmer", "party": "IND", "round1": 3360, "round2": 0}
+        ]
+    }
+}

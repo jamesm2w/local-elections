@@ -64,12 +64,29 @@
                 });
             }
 
-            async function getPartyData (partyCode) {
+            function getPartyData (partyCode) {
                 if (!window.parties) {
                     return {};
                 }
 
                 return window.parties[partyCode];
+            }
+
+            function getPartyStyle (partyCode) {
+                let data = getPartyData(partyCode);
+                let style = {
+                    "color": "white",
+                    "fillColor": data.colour,
+                    "weight": 1,
+                    "opacity": 1,
+                    "fillOpacity": 0.7
+                };
+
+                if (data.border) {
+                    style.color = data.border;
+                }
+
+                return style;
             }
 
             async function createCouncilDiagram (groupings) {
@@ -82,10 +99,14 @@
                 if (groupings["Administration"]) {
                     let count = 0;
                     for (let party of groupings["Administration"]) {
-                        let partyData = await getPartyData(party.name);
-
-                        partyGroups.push({"name": partyData.name, "colour": partyData.colour, "seats": party.seats});
-
+                        let partyData = getPartyData(party.name);
+                        let partyObj = {"name": partyData.name, "colour": partyData.colour, "seats": party.seats}
+                        
+                        if (partyData.border != undefined) {
+                            partyObj.border = partyData.border;
+                        }
+                        
+                        partyGroups.push(partyObj);
                         name += (count >= 1 ? "-" : "") + partyData.name;
                         count++;
                     }
@@ -93,9 +114,32 @@
 
                 if (groupings["Opposition"]) {
                     for (let party of groupings["Opposition"]) {
-                        let partyData = await getPartyData(party.name);
-                        partyGroups.push({"name": partyData.name, "colour": partyData.colour, "seats": party.seats});
+                        let partyData = getPartyData(party.name);
+                        let partyObj = {"name": partyData.name, "colour": partyData.colour, "seats": party.seats}
+                        
+                        if (partyData.border != undefined) {
+                            partyObj.border = partyData.border;
+                        }
+                        
+                        partyGroups.push(partyObj);
                     }
+                }
+
+                if (groupings["Crossbench"]) {
+                    for (let party of groupings["Crossbench"]) {
+                        let partyData = getPartyData(party.name);
+                        let partyObj = {"name": partyData.name, "colour": partyData.colour, "seats": party.seats}
+                        
+                        if (partyData.border != undefined) {
+                            partyObj.border = partyData.border;
+                        }
+                        
+                        partyGroups.push(partyObj);
+                    }
+                }
+
+                if (!groupings["Administration"] && !groupings["Opposition"]) {
+                    name = "";
                 }
 
                 let svg = createArch(partyGroups, name);
@@ -107,73 +151,127 @@
             }
         </script>
         <script>
-            // Dec 2019:
-            // Constituencies (BUC) 500m: https://opendata.arcgis.com/datasets/4c191bee309d4b2d8b2c5b94d2512af9_0.geojson
-            // Constituencies (BGC)  20m: https://opendata.arcgis.com/datasets/937997590f724a398ccc0100dbd9feee_0.geojson
+            // Westminster Constituencies - Dec 2019:
+            // BUC 500m: https://opendata.arcgis.com/datasets/4c191bee309d4b2d8b2c5b94d2512af9_0.geojson
+            // BGC  20m: https://opendata.arcgis.com/datasets/937997590f724a398ccc0100dbd9feee_0.geojson
 
-            // Dec 2019:
-            // Counties (BUC) 500m: https://opendata.arcgis.com/datasets/37363d379f4f40fa8c3f0d28eedfdd37_0.geojson
-            // Counties (BGC)  20m: https://opendata.arcgis.com/datasets/bb1440110108418ca07a69cc6d91aef1_0.geojson
+            // Counties - Dec 2019:
+            // BUC 500m: https://opendata.arcgis.com/datasets/37363d379f4f40fa8c3f0d28eedfdd37_0.geojson
+            // BGC  20m: https://opendata.arcgis.com/datasets/bb1440110108418ca07a69cc6d91aef1_0.geojson
 
-            // Dec 2020:
-            // Local Authority Districts (BUC) 500m: https://opendata.arcgis.com/datasets/69dc11c7386943b4ad8893c45648b1e1_0.geojson
-            // Local Authority Districts (BGC)  20m: https://opendata.arcgis.com/datasets/db23041df155451b9a703494854c18c4_0.geojson
+            // Local Authority Districts - Dec 2020: (Districts & Unitiaries)
+            // BUC 500m: https://opendata.arcgis.com/datasets/69dc11c7386943b4ad8893c45648b1e1_0.geojson
+            // BGC  20m: https://opendata.arcgis.com/datasets/db23041df155451b9a703494854c18c4_0.geojson
 
-            // Dec 2019:
-            // Police Force Areas (BUC) 500m: https://opendata.arcgis.com/datasets/e79b2d65db914d83899b1cf5b09385ad_0.geojson
-            // Police Force Areas (BGC)  20m: https://opendata.arcgis.com/datasets/1fc3e34edece4cd58dabac422c3556c9_0.geojson
-
-            let politicalShading = {
-                "CON": {
-                    "color": "#0087DC",
-                    "weight": 2,
-                    "opacity": 0.9,
-                    "fillOpacity": 0.5,
-                },
-                "NOC": {
-                    "color": "black",
-                    "weight": 2,
-                    "opacity": 0.9,
-                    "fillOpacity": 0.5,
-                }
-            };
+            // Police Force Areas - Dec 2019:
+            // BUC 500m: https://opendata.arcgis.com/datasets/e79b2d65db914d83899b1cf5b09385ad_0.geojson
+            // BGC  20m: https://opendata.arcgis.com/datasets/1fc3e34edece4cd58dabac422c3556c9_0.geojson
         
+            // Combined Authorities - Dec 2019:
+            // BUC 500m: https://opendata.arcgis.com/datasets/18f9da5009874f2193145c377a997e6d_0.geojson
+            // BGC  20m: https://opendata.arcgis.com/datasets/33c2c476a4464cec8d48264bdabab782_0.geojson
+
+            async function countyPopup (electionData) {
+                let resultStr = electionData.result || "";
+                let isGain = resultStr.match(/([A-Z]+) gain from ([A-Z]+)/m) != null;
+                let isHold = resultStr.match(/([A-Z]+) hold/m) != null;
+
+                let groups = [""];
+                if (isGain) {
+                    groups = electionData.result.match(/([A-Z]+) gain from ([A-Z]+)/m);    
+                } else if (isHold) {
+                    groups = electionData.result.match(/([A-Z]+) hold/m);
+                }
+
+                for (let i = 1; i < groups.length; i++) {
+                    console.log(groups[i], getPartyData(groups[i]).name);
+                    resultStr = resultStr.replace(groups[i], getPartyData(groups[i]).name);
+                }
+                
+                let popupHTML = `<span class="big-text">${electionData.name}</span> <span class="small-text">[${electionData.id}]</span>
+                <br>
+                Type: ${electionData.type} - ${electionData.elections} | Leadership: ${electionData.model}
+                <br>
+                Election Result: ${resultStr}
+                <br>
+                Overall Control: ${getPartyData(electionData.majority).name}
+                <br>
+                <img src="${await createCouncilDiagram(electionData.groups)}" alt="Council Control Diagram">`;
+
+                if (electionData.note != undefined) {
+                    popupHTML += "<br> Note: " + electionData.note;
+                }
+
+                if (electionData.type == "Abolished") {
+                    popupHTML = `<span class="big-text">(ABOLISHED) ${electionData.name}</span> <span class="small-text">[${electionData.id}]</span>
+                    <br>
+                    
+                    Note: ${electionData.note}`;
+                }
+                return popupHTML;
+            }
+
             document.addEventListener("DOMContentLoaded", async () => {
                 window.boundaries = {
                     "counties": await load("data/Counties_2019_500.geojson"),
                     "westminster": await load("data/Westminster_2019_500.geojson"),
                     "local_authority": await load("data/Local_Authority_2020_500.geojson"),
-                    "police_force": await load("data/Police_Force_2019_500.geojson")
+                    "police_force": await load("data/Police_Force_2019_500.geojson"),
+                    "combined_authorities": await load("data/Combined_Authorities_2019_500.geojson")
                 };
 
                 window.elections = {
-                    "counties": await load("elections/Counties_2017.json")
+                    "2017": {
+                        "counties": await load("elections/Counties_2017.json")
+                    },
+                    "2021": {
+                        "counties": await load("elections/Counties_2021.json")
+                    }
                 };
 
                 window.parties = await load("elections/Parties_2021.json");
 
                 let mapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 19,
-                    attribution: '&copy; James Macer-Wright, <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, OpenCouncilData, ONS Open Geography Portal'
+                    attribution: '&copy; jamesm2w, <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, OpenCouncilData, ONS Open Geography Portal'
                 });
 
                 let counties = L.geoJson(boundaries.counties.features, {
                     style: (feature) => {
-                        let electionData = window.elections.counties[feature.properties.cty19cd];
-                        return politicalShading[electionData.majority];
+                        let electionData = window.elections["2017"].counties[feature.properties.cty19cd];
+                        let style = getPartyStyle(electionData.majority);
+                        if (electionData.type == "Abolished") {
+                            style.color = "#DDDDDD";
+                        } else if (electionData.type == "No Election") {
+                            style.color = "#DDDDDD";
+                        }
+
+                        return style;
                     },
                     onEachFeature: async (feature, layer) => {
-                        let electionData = window.elections.counties[feature.properties.cty19cd];
-                        
-                        let popupHTML = `<span class="big-text">${electionData.name}</span> <span class="small-text">[${electionData.id}]</span>
-                        <br>
-                        Type: ${electionData.type} - ${electionData.elections} | Leadership: ${electionData.model}
-                        <br>
-                        Control: ${(await getPartyData(electionData.majority)).name}
-                        <br>
-                        <img src="${await createCouncilDiagram(electionData.groups)}" alt="Council Control Diagram">`;
-                        
-                        layer.bindPopup(popupHTML);
+                        let electionData = window.elections["2017"].counties[feature.properties.cty19cd];
+
+                        layer.bindPopup(await countyPopup(electionData));
+                    }
+                });
+
+                let counties2 = L.geoJson(boundaries.counties.features, {
+                    style: (feature) => {
+                        let electionData = window.elections["2021"].counties[feature.properties.cty19cd];
+                        let style = getPartyStyle(electionData.majority);
+                        if (electionData.type == "Abolished") {
+                            style.color = "white";
+                            style.fillColor = "white";
+                        } else if (electionData.type == "No Election") {
+                            style.fillColor = "#DDDDDD";
+                        }
+
+                        return style;
+                    },
+                    onEachFeature: async (feature, layer) => {
+                        let electionData = window.elections["2021"].counties[feature.properties.cty19cd];
+
+                        layer.bindPopup(await countyPopup(electionData));
                     }
                 });
 
@@ -208,7 +306,18 @@
                     onEachFeature: (feature, layer) => {
                         layer.bindPopup(feature.properties.PFA19CD + ": " + feature.properties.PFA19NM);
                     }
-                })
+                });
+
+                let combined_authorities = L.geoJson(boundaries.combined_authorities.features, {
+                    style: {
+                        "color": "#0f0",
+                        "weight": 5,
+                        "opacity": 0.65
+                    },
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup(feature.properties.cauth19cd + ": " + feature.properties.cauth19nm);
+                    }
+                });
 
                 window.map = L.map("map", {
                     center: [51.505, -0.09],
@@ -217,15 +326,17 @@
                 });
 
                 let baseMaps = {
-                    "Counties": counties,
-                    "Local Authority": local_authority,
-                    "Westminster": westminster,
-                    "Police Force Areas": police_force
+                    "Counties - 2017": counties,
+                    "Counties - 2021": counties2
+                    //"Local Authority": local_authority,
+                    //"Westminster": westminster,
+                    //"Police Force Areas": police_force,
+                    //"Combined Authorities": combined_authorities
                 };
 
                 let overlayMaps = {};
 
-                L.control.layers(baseMaps, overlayMaps).addTo(map);
+                L.control.layers(baseMaps, overlayMaps, {"collapsed": false}).addTo(map);
             });
         
         </script>

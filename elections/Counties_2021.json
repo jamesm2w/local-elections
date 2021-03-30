@@ -1,0 +1,372 @@
+{
+    "E10000002": {
+        "name": "Buckinghamshire",
+        "id": "E10000002",
+        "type": "Abolished",
+        "majority": "VAC",
+        "note": "Merged into new Buckinghamshire Unitary Authority"
+    },
+    "E10000003": {
+        "name": "Cambridgeshire",
+        "id": "E10000003",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 59}
+            ]
+        }
+    },
+    "E10000006": {
+        "name": "Cumbria",
+        "id": "E10000004",
+        "type": "No Election",
+        "note": "Election postponed to 2022 due to COVID-19",
+        "elections": "Postponed",
+        "model": "Leader and Cabinet",
+        "majority": "NOC",
+        "result": "NOC hold",
+        "groups": {
+            "Administration": [
+                {"name": "LAB", "seats": 26},
+                {"name": "LIB", "seats": 16}
+            ],
+            "Opposition": [
+                {"name": "CON", "seats": 37},
+                {"name": "IND", "seats": 5}
+            ]
+        }
+    },
+    "E10000007": {
+        "name": "Derbyshire",
+        "id": "E10000007",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 64}
+            ]
+        }
+    },
+    "E10000008": {
+        "name": "Devon",
+        "id": "E10000008",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 60}
+            ]
+        }
+    },
+    "E10000011": {
+        "name": "East Sussex",
+        "id": "E10000011",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 50}
+            ]
+        }
+    },
+    "E10000012": {
+        "name": "Essex",
+        "id": "E10000012",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 72}
+            ]
+        }
+    },
+    "E10000013": {
+        "name": "Gloucestershire",
+        "id": "E10000013",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 53}
+            ]
+        }
+    },
+    "E10000014": {
+        "name": "Hampshire",
+        "id": "E10000014",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 78}
+            ]
+        }
+    },
+    "E10000015": {
+        "name": "Hertfordshire",
+        "id": "E10000015",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 78}
+            ]
+        }
+    },
+    "E10000016": {
+        "name": "Kent",
+        "id": "E10000016",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 81}
+            ]
+        }
+    },
+    "E10000017": {
+        "name": "Lancashire",
+        "id": "E10000017",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 84}
+            ]
+        }
+    },
+    "E10000018": {
+        "name": "Leicestershire",
+        "id": "E10000018",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 55}
+            ]
+        }
+    },
+    "E10000019": {
+        "name": "Lincolnshire",
+        "id": "E10000019",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 70}
+            ]
+        }
+    },
+    "E10000020": {
+        "name": "Norfolk",
+        "id": "E10000020",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 84}
+            ]
+        }
+    },
+    "E10000021": {
+        "name": "Northamptonshire",
+        "id": "E10000021",
+        "type": "Abolished",
+        "majority": "VAC",
+        "note": "Merged into new Unitary Councils"
+    },
+    "E10000023": {
+        "name": "North Yorkshire",
+        "id": "E10000023",
+        "type": "No Election",
+        "note": "Election postponed to 2022 due to COVID-19",
+        "elections": "Postponed",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "CON hold",
+        "groups": {
+            "Administration": [
+                {"name": "CON", "seats": 54}
+            ],
+            "Opposition": [
+                {"name": "OTH", "seats": 8},
+                {"name": "LAB", "seats": 4},
+                {"name": "LIB", "seats": 4},
+                {"name": "IND", "seats": 2}
+            ]
+        }
+    },
+    "E10000024": {
+        "name": "Nottinghamshire",
+        "id": "E10000024",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "NOC",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 66}
+            ]
+        }
+    },
+    "E10000025": {
+        "name": "Oxfordshire",
+        "id": "E10000024",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "NOC",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 63}
+            ]
+        }
+    },
+    "E10000027": {
+        "name": "Somerset",
+        "id": "E10000027",
+        "type": "No Election",
+        "note": "Election postponed to 2022 due to COVID-19",
+        "elections": "Postponed",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "CON hold",
+        "groups": {
+            "Administration": [
+                {"name": "CON", "seats": 35}
+            ],
+            "Opposition": [
+                {"name": "LIB", "seats": 12},
+                {"name": "LAB", "seats": 3},
+                {"name": "IND", "seats": 3},
+                {"name": "GRN", "seats": 2}
+            ]
+        }
+    },
+    "E10000028": {
+        "name": "Staffordshire",
+        "id": "E10000028",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 62}
+            ]
+        }
+    },
+    "E10000029": {
+        "name": "Suffolk",
+        "id": "E10000029",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 75}
+            ]
+        }
+    },
+    "E10000030": {
+        "name": "Surrey",
+        "id": "E10000030",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 81}
+            ]
+        }
+    },
+    "E10000031": {
+        "name": "Warwickshire",
+        "id": "E10000031",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 57}
+            ]
+        }
+    },
+    "E10000032" : {
+        "name": "West Sussex",
+        "id": "E10000032",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 70}
+            ]
+        }
+    },
+    "E10000034" : {
+        "name": "Worcestershire",
+        "id": "E10000034",
+        "type": "County",
+        "elections": "All Up",
+        "model": "Leader and Cabinet",
+        "majority": "CON",
+        "result": "Pending Results",
+        "groups": {
+            "Crossbench": [
+                {"name": "VAC", "seats": 57}
+            ]
+        }
+    }
+}
