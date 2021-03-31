@@ -1,12 +1,27 @@
 {
+    "cycles": "0: 2016/2021/2024 - 1: 2017/2021/2025 - 2: 2018/2022/2026 - 3: 2019/2023/2027",
     "E47000001": {
         "name": "Greater Manchester",
         "id": "E47000001",
         "mayor": "Andy Burnham",
         "party": "LAB",
+        "established": "2017",
+        "cycle": 1,
+        "result": "LAB win",
+        "council_areas": [
+            {"id": "E08000001", "name": "Bolton", "seat": "LAB"},
+            {"id": "E08000002", "name": "Bury", "seat": "LAB"},
+            {"id": "E08000003", "name": "Manchester", "seat": "LAB"},
+            {"id": "E08000004", "name": "Oldham", "seat": "LAB"},
+            {"id": "E08000005", "name": "Rochdale", "seat": "LAB"},
+            {"id": "E08000006", "name": "Salford", "seat": "LAB"},
+            {"id": "E08000007", "name": "Stockport", "seat": "LAB"},
+            {"id": "E08000008", "name": "Tameside", "seat": "LAB"},
+            {"id": "E08000009", "name": "Trafford", "seat": "LAB"},
+            {"id": "E08000010", "name": "Wigan", "seat": "LAB"}
+        ],
         "membership": [
-            {"name": "LAB", "seats": 10},
-            {"name": "CON", "seats": 1}
+            {"name": "LAB", "seats": 2}
         ],
         "mayoralty": [
             {"name": "Andy Burnham", "party": "LAB", "round1": 359352, "round2": 0},
@@ -17,6 +32,182 @@
             {"name": "Shneur Odze", "party": "UKIP", "round1": 10583, "round2": 0},
             {"name": "Mohammad Aslam", "party": "IND", "round1": 5815, "round2": 0},
             {"name": "Marcus Farmer", "party": "IND", "round1": 3360, "round2": 0}
+        ]
+    },
+    "E47000002": {
+        "name": "Sheffield City Region",
+        "id": "E47000002",
+        "mayor": "Dan Jarvis",
+        "party": "LAB",
+        "established": "2018",
+        "cycle": 2,
+        "result": "LAB win",
+        "council_areas": [
+            {"id": "E08000016", "name": "Barnsley", "seat": "LAB"},
+            {"id": "E08000017", "name": "Doncaster", "seat": "LAB"},
+            {"id": "E08000018", "name": "Rotherham", "seat": "LAB"},
+            {"id": "E08000019", "name": "Sheffield", "seat": "LAB"}
+        ],
+        "membership": [],
+        "mayoralty": [
+            {"name": "Dan Jarvis", "party": "LAB", "round1": 122635, "round2": 144154},
+            {"name": "Ian Walker", "party": "CON", "round1": 37738, "round2": 50619},
+            {"name": "Hannah Kitching", "party": "LIB", "round1": 27146, "round2": 0},
+            {"name": "Mick Bower", "party": "GRN", "round1": 22318, "round2": 0},
+            {"name": "Robert Murphy", "party": "OTH", "round1": 20339, "round2": 0},
+            {"name": "Daivd Allen", "party": "UKIP", "round1": 14547, "round2": 0},
+            {"name": "Naveen Judah", "party": "IND", "round1": 10837, "round2": 0}
+        ]
+    },
+    "E47000003": {
+        "name": "West Yorkshire",
+        "id": "E47000003",
+        "mayor": "Vacant",
+        "party": "VAC",
+        "established": "2021",
+        "cycle": 2,
+        "result": "Pending Results",
+        "council_areas": [
+            {"id": "E08000032", "name": "Bradford", "seat": "LAB"},
+            {"id": "E08000033", "name": "Calderdale", "seat": "LAB"},
+            {"id": "E08000034", "name": "Kirklees", "seat": "LAB"},
+            {"id": "E08000035", "name": "Leeds", "seat": "LAB"},
+            {"id": "E08000036", "name": "Wakefield", "seat": "LAB"}
+        ],
+        "membership": [],
+        "mayoralty": [
+            {"name": "Pending Results", "party": "VAC", "round1": 0, "round2": 0}
+        ]
+    },
+    "E47000004": {
+        "name": "Liverpool City Region",
+        "id": "E47000004",
+        "mayor": "Steve Rotheram",
+        "party": "LAB",
+        "established": "2017",
+        "cycle": 1,
+        "result": "LAB win",
+        "council_areas": [
+            {"id": "E08000006", "name": "Halton", "seat": "LAB"},
+            {"id": "E08000011", "name": "Knowsley", "seat": "LAB"},
+            {"id": "E08000012", "name": "Liverpool", "seat": "LAB"},
+            {"id": "E08000013", "name": "St. Helens", "seat": "LAB"},
+            {"id": "E08000014", "name": "Sefton", "seat": "LAB"},
+            {"id": "E08000015", "name": "Wirral", "seat": "LAB"}
+        ],
+        "membership": [],
+        "mayoralty": [
+            {"name": "Steve Rotheram", "party": "LAB", "round1": 171167, "round2": 0},
+            {"name": "Tony Caldeira", "party": "CON", "round1": 58805, "round2": 0},
+            {"name": "Carl Cashman", "party": "LIB", "round1": 19751, "round2": 0},
+            {"name": "Tom Crone", "party": "GRN", "round1": 14094, "round2": 0},
+            {"name": "Paula Walters", "party": "UKIP", "round1": 11946, "round2": 0},
+            {"name": "Roger Bannister", "party": "OTH", "round1": 7881, "round2": 0},
+            {"name": "Tabitha Morton", "party": "OTH", "round1": 4287, "round2": 0},
+            {"name": "Paul Breen", "party": "OTH", "round1": 729, "round2": 0}
+        ]
+    },
+    "E47000006": {
+        "name": "Tees Valley",
+        "id": "E47000006",
+        "mayor": "Ben Houchen",
+        "party": "CON",
+        "established": "2017",
+        "cycle": 1,
+        "result": "CON win",
+        "council_areas": [],
+        "membership": [],
+        "mayoralty": []
+    },
+    "E47000007": {
+        "name": "West Midlands",
+        "id": "E47000007",
+        "mayor": "Andy Street",
+        "party": "CON",
+        "established": "2017",
+        "cycle": 1,
+        "result": "CON win",
+        "council_areas": [],
+        "membership": [],
+        "mayoralty": []
+    },
+    "E47000008": {
+        "name": "Cambridgeshire and Peterborough",
+        "id": "E47000008",
+        "mayor": "James Palmer",
+        "party": "CON",
+        "established": "2017",
+        "cycle": 1,
+        "result": "CON win",
+        "council_areas": [],
+        "membership": [],
+        "mayoralty": []
+    },
+    "E47000009": {
+        "name": "West of England",
+        "id": "E47000009",
+        "mayor": "Tim Bowles",
+        "party": "CON",
+        "established": "2017",
+        "cycle": 1,
+        "result": "CON win",
+        "council_areas": [],
+        "membership": [],
+        "mayoralty": []
+    },
+    "E47000010": {
+        "name": "North East",
+        "id": "E47000010",
+        "mayor": "No Mayor",
+        "party": "LAB",
+        "established": "2014",
+        "cycle": 0,
+        "note": "Does not have an elected mayor",
+        "council_areas": [],
+        "membership": []
+    },
+    "E47000011": {
+        "name": "North of Tyne",
+        "id": "E47000011",
+        "mayor": "Jamie Driscoll",
+        "party": "LAB",
+        "established": "2019",
+        "cycle": 3,
+        "result": "CON win",
+        "council_areas": [],
+        "membership": [],
+        "mayoralty": []
+    },
+    "E47000000": {
+        "name": "Greater London Authority",
+        "id": "E47000000",
+        "mayor": "Sadiq Khan",
+        "party": "LAB",
+        "established": "2000",
+        "cycle": 0,
+        "result": "No Election",
+        "note": "Out of cycle",
+        "council_areas": [],
+        "membership": [
+            {"name": "LAB", "seats": 12},
+            {"name": "CON", "seats": 8},
+            {"name": "GRN", "seats": 2},
+            {"name": "OTH", "seats": 2},
+            {"name": "LIB", "seats": 1}
+        ],
+        "mayoralty": [
+            {"name": "Sadiq Khan", "party": "LAB", "round1": 1148716, "round2": 1310143},
+            {"name": "Zac Goldsmith", "party": "CON", "round1": 909755, "round2": 994614},
+            {"name": "Sian Berry", "party": "GRN", "round1": 150673, "round2": 0},
+            {"name": "Caroline Pidgeon", "party": "LIB", "round1": 120005, "round2": 0},
+            {"name": "Peter Whittle", "party": "UKIP", "round1": 94373, "round2": 0},
+            {"name": "Sophie Walker", "party": "OTH", "round1": 53055, "round2": 0},
+            {"name": "George Galloway", "party": "OTH", "round1": 37007, "round2": 0},
+            {"name": "Paul Golding", "party": "OTH", "round1": 31372, "round2": 0},
+            {"name": "Lee Harris", "party": "OTH", "round1": 20537, "round2": 0},
+            {"name": "David Furness", "party": "OTH", "round1": 13325, "round2": 0},
+            {"name": "Prince Zylinski", "party": "IND", "round1": 13202, "round2": 0},
+            {"name": "Ankit Love", "party": "OTH", "round1": 4941, "round2": 0}
         ]
     }
 }

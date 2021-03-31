@@ -73,7 +73,7 @@
             }
 
             function getPartyStyle (partyCode) {
-                let data = getPartyData(partyCode);
+                let data = getPartyData(partyCode) || {colour: "#f00"};
                 let style = {
                     "color": "white",
                     "fillColor": data.colour,
@@ -89,7 +89,7 @@
                 return style;
             }
 
-            async function createCouncilDiagram (groupings) {
+            function createCouncilDiagram (groupings) {
                 if (groupings == undefined) {
                     return undefined;
                 }
@@ -221,7 +221,8 @@
 
                 window.elections = {
                     "2017": {
-                        "counties": await load("elections/Counties_2017.json")
+                        "counties": await load("elections/Counties_2017.json"),
+                        "combined_authorities": await load("elections/Combined_Authorities_2017.json")
                     },
                     "2021": {
                         "counties": await load("elections/Counties_2021.json")
@@ -308,13 +309,45 @@
                 });
 
                 let combined_authorities = L.geoJson(boundaries.combined_authorities.features, {
-                    style: {
-                        "color": "#0f0",
-                        "weight": 5,
-                        "opacity": 0.65
+                    style: (feature) => {
+                        let electionData = window.elections["2017"].combined_authorities[feature.properties.cauth19cd];
+                        let style = getPartyStyle(electionData.party);
+                        if (electionData.mayor == "Abolished" || electionData.mayor == "No Mayor") {
+                            style.color = "#DDDDDD";
+                        } else if (electionData.mayor == "No Election") {
+                            style.color = "#DDDDDD";
+                        }
+
+                        return style;
                     },
                     onEachFeature: (feature, layer) => {
-                        layer.bindPopup(feature.properties.cauth19cd + ": " + feature.properties.cauth19nm);
+                        let electionData = window.elections["2017"].combined_authorities[feature.properties.cauth19cd];
+                        let popupHTML = `<span class="big-text">${electionData.name}</span> 
+                                         <span class="small-text">[${electionData.id}]</span>
+                                         <br> Established: ${electionData.established}
+                                         `
+                        if (electionData.mayor) {
+                            popupHTML += `Mayor: ${electionData.mayor} (${getPartyData(electionData.party).name}) <br>`;
+                        }
+                        if (electionData.result) {
+                            popupHTML += `Result: ${electionData.result} <br>`;
+                        }
+                        if (electionData.membership.length != 0) {
+                            popupHTML += `<img src="${createCouncilDiagram({"Crossbench": electionData.membership})}" alt="Council Control Diagram"> <br>`;
+                        }
+
+                        if (electionData.note) {
+                            popupHTML += electionData.note + "<br>";
+                        }
+
+                        if (electionData.mayoralty) {
+                            for (let i = 0; i < electionData.mayoralty.length; i++) {
+                                let candidate = electionData.mayoralty[i];
+                                popupHTML += `${candidate.name} (${getPartyData(candidate.party).name}) - ${candidate.round1} - ${candidate.round2} <br>`;
+                            }
+                        }
+
+                        layer.bindPopup(popupHTML);
                     }
                 });
 
@@ -326,11 +359,11 @@
 
                 let baseMaps = {
                     "Counties - 2017": counties,
-                    "Counties - 2021": counties2
-                    //"Local Authority": local_authority,
+                    "Counties - 2021": counties2,
+                    "Local Authority": local_authority,
                     //"Westminster": westminster,
                     //"Police Force Areas": police_force,
-                    //"Combined Authorities": combined_authorities
+                    "Combined Authorities": combined_authorities
                 };
 
                 let overlayMaps = {};
