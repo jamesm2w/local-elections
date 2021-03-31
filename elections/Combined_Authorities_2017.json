@@ -185,7 +185,7 @@
         "party": "LAB",
         "established": "2000",
         "cycle": 0,
-        "result": "No Election",
+        "result": "No Election (Not in cycle)",
         "note": "Out of cycle",
         "council_areas": [],
         "membership": [
