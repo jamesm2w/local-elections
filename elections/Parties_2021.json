@@ -34,6 +34,11 @@
         "code": "BXP",
         "colour": "#12B6CF"
     },
+    "RUK": {
+        "name": "Reform UK",
+        "code": "RUK",
+        "colour": "#12B6CF"
+    },
     "IND": {
         "name": "Independent",
         "code": "IND",
